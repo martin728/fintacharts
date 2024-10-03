@@ -1,0 +1,17 @@
+<span>Market data:</span>
+<mat-card>
+  <mat-card-content>
+      <div>
+        <mat-label>Symbol: </mat-label>
+        <div>{{instrument?.symbol || 'N/A'}}</div>
+      </div>
+      <div>
+        <mat-label>Price: </mat-label>
+        <div>{{ resetPrice ? 'N/A' : (websocketData?.price || 'N/A') }}</div>
+      </div>
+      <div>
+        <mat-label>Time: </mat-label>
+        <div>{{currentTime || 'N/A'}}</div>
+      </div>
+  </mat-card-content>
+</mat-card>

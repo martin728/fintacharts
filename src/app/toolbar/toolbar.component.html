@@ -1,0 +1,11 @@
+<div class="toolbar">
+  <mat-form-field appearance="outline" subscriptSizing="dynamic">
+    <mat-label>Select an option</mat-label>
+    <mat-select [(ngModel)]="selectedInstrument" [placeholder]="selectedInstrument?.symbol || ''" (selectionChange)="onSymbolChange($event.value)">
+      <mat-option *ngFor="let instrument of instruments" [value]="instrument">
+        {{ instrument?.symbol }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <button mat-raised-button color="primary" (click)="onSubscribe()">{{ logData ? 'Unsubscribe' : 'Subscribe' }}</button>
+</div>

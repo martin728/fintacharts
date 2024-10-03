@@ -1,0 +1,22 @@
+@use '@angular/material' as mat;
+
+$custom-theme: mat.define-light-theme((
+  color: (
+    primary: mat.$indigo-palette,
+    accent: mat.$pink-palette,
+    background: mat.define-palette(mat.$grey-palette, 50, 100, 500),
+  )
+));
+
+@include mat.core();
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: 'Roboto', 'Helvetica Neue', sans-serif;
+  background-color: mat.get-color-from-palette(mat.$grey-palette, 300);
+  margin: auto;
+  width: 800px;
+}

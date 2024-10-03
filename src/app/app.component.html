@@ -1,0 +1,9 @@
+<mat-card class="container">
+  <app-toolbar [instruments]="(instruments$ | async)!" (selectionChange)="selectedInstrument = $event " (logDataChange)="showChart = $event"></app-toolbar>
+  <app-market-data [instrument]="selectedInstrument" [websocketData]="(websocketData$ | async)!" [resetPrice]="!showChart"></app-market-data>
+  <app-chart *ngIf="showChart; else template" [chartData]="(dateRangeData$ | async)!"></app-chart>
+  <ng-template #template>
+    <span>Please subscribe to view the chart data</span>
+  </ng-template>
+</mat-card>
+<router-outlet />
