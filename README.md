@@ -1,5 +1,10 @@
-# Fintacharts
+ 
+![img.png](img.png)
 
+There was an issue with CORS, so i used Chrome extension in order ignore CORS errors.
+Please reach me out if you know which origin i should use in order to pass CORS policies.
+
+# Fintacharts
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.10.
 
 ## Development server
