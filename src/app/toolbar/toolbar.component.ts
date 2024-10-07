@@ -5,6 +5,7 @@ import { MatFormField, MatLabel } from "@angular/material/form-field";
 import { MatInputModule } from "@angular/material/input";
 import { MatOption, MatSelect } from "@angular/material/select";
 import { FormsModule } from "@angular/forms";
+import { take } from "rxjs";
 import { Instrument } from "../../models/instrument-model";
 import { Websocket } from "../services/websocket/websocket.service";
 import { Service } from "../services/service";
@@ -53,9 +54,12 @@ export class ToolbarComponent {
     this.emitLogData();
     this.toggleWebsocket()
     this.websocketService.sendMessage(this.websocketService.getMessage(this.selectedInstrument.id, true));
-    this.service.getDateRange(this.selectedInstrument.id).subscribe(data => {
-      this.service.setDateRange(data);
-    });
+    this.service
+      .getDateRange(this.selectedInstrument.id)
+      .pipe(take(1))
+      .subscribe(data => {
+        this.service.setDateRange(data);
+      });
   }
 
   onSymbolChange(newSymbol: Instrument): void {
