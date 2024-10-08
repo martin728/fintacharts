@@ -2,7 +2,6 @@ import { Environment } from "../models/environment-model";
 
 export const environment: Environment = {
   production: false,
-  apiUrl: 'https://platform.fintacharts.com',
   provider : 'oanda',
   kind : 'forex',
   password:'kisfiz-vUnvy9-sopnyv',

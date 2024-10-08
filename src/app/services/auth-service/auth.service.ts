@@ -9,7 +9,7 @@ import { environment } from "../../../environments/environment.development";
 })
 export class AuthService {
   environment:Environment = environment
-  url = `${this.environment.apiUrl}/identity/realms/fintatech/protocol/openid-connect/token`;
+  url = `/identity/realms/fintatech/protocol/openid-connect/token`;
 
   constructor(private http:HttpClient) {}
 

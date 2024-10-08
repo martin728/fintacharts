@@ -15,11 +15,11 @@ export class Service {
   constructor(private http: HttpClient) { }
 
   getInstruments(){
-    return this.http.get<InstrumentsResponse>(`${this.environment.apiUrl}/api/instruments/v1/instruments?provider=${this.environment.provider}&kind=${this.environment.kind}`)
+    return this.http.get<InstrumentsResponse>(`/api/instruments/v1/instruments?provider=${this.environment.provider}&kind=${this.environment.kind}`)
   }
 
   getDateRange(instrumentId:string){
-    return this.http.get<DateRangeResponse>(`${this.environment.apiUrl}/api/bars/v1/bars/date-range?instrumentId=${instrumentId}&provider=${this.environment.provider}&interval=${this.environment.interval}&periodicity=${this.environment.periodicity}&startDate=${this.environment.startDate}`)
+    return this.http.get<DateRangeResponse>(`/api/bars/v1/bars/date-range?instrumentId=${instrumentId}&provider=${this.environment.provider}&interval=${this.environment.interval}&periodicity=${this.environment.periodicity}&startDate=${this.environment.startDate}`)
   }
 
   setDateRange(data: DateRangeResponse): void {
