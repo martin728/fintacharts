@@ -17,8 +17,8 @@ export class AuthService {
     const body = new URLSearchParams({
       username: credentials.username,
       password: credentials.password,
-      grant_type: 'password',
-      client_id: 'app-cli'
+      grant_type: environment.grant_type,
+      client_id: environment.client_id
     }).toString();
 
     const headers = new HttpHeaders({

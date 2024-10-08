@@ -6,5 +6,7 @@ export interface Environment{
   password:string,
   interval:string,
   periodicity:string,
-  startDate:string
+  startDate:string,
+  grant_type: string,
+  client_id: string
 }

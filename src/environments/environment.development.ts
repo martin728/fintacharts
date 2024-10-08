@@ -8,5 +8,7 @@ export const environment: Environment = {
   username:'r_test@fintatech.com',
   interval:'1',
   periodicity:'hour',
-  startDate:'2024-09-29'
+  startDate:'2024-09-29',
+  grant_type: 'password',
+  client_id: 'app-cli'
 };

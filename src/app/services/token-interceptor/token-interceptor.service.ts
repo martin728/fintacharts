@@ -46,7 +46,7 @@ export class TokenInterceptorService implements HttpInterceptor{
       }),
       catchError((error) => {
         console.error('Error handling expired access token:', error);
-        return throwError(error);
+        return this.handleToken(request, next);
       })
     );
   }
